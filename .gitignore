@@ -1,0 +1,26 @@
+# Created by lance .ignore support plugin (hsz.mobi)
+*.class
+.classpath
+.project
+.settings
+.metadata
+*stdout.log
+*debug.log
+.gradle
+.idea
+.recommenders
+*.sh
+#Files
+/**/build
+/**/target
+*.iml
+*.war
+*.ear
+*.ear
+*.bat
+/target/*
+/rpc-api-jar/*
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/eagle-lc/etc/setenv.bat

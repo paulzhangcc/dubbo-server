@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.paulzhangcc</groupId>
+	<artifactId>rpc-api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>rpc-api</name>
+	<url>http://maven.apache.org</url>
+
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>localprivatenexus</name>
+			<url>http://10.133.255.240:8093/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>../src/main/java/com/paulzhangcc/demo/rpc/api</source>
+								<source>../src/main/java/com/paulzhangcc/demo/rpc/constant</source>
+								<source>../src/main/java/com/paulzhangcc/demo/rpc/dto</source>
+								<source>../src/main/java/com/paulzhangcc/demo/rpc/enum</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>server</id>
+						<goals><goal>jar</goal></goals>
+						<phase>package</phase>
+						<configuration>
+							<classifier></classifier>
+							<includes>
+								<include>**/api/**</include>
+								<include>**/constant/**</include>
+								<include>**/dto/**</include>
+								<include>**/enum/**</include>
+							</includes>
+							<outputDirectory>${project.basedir}/../rpc-api-jar</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>ReleaseRepository</name>
+			<url>http://10.133.255.240:8093//nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>SnapshotRepository</name>
+			<url>http://10.133.255.240:8093/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
