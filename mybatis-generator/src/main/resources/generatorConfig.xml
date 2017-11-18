@@ -37,11 +37,17 @@
             <property name="replaceString" value="Example"/>
         </plugin>-->
 
-        <commentGenerator>
-            <property name="suppressAllComments" value="true"/>
+        <commentGenerator type="com.paulzhangcc.mybatis.generator.CommentGeneratorHelper">
+            <property name="suppressAllComments" value="fase"/>
             <property name="suppressDate" value="true"/>
         </commentGenerator>
-
+        <!-- mysql配置 -->
+        <!--   <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                  connectionURL="jdbc:mysql://localhost:3306/bookshop" userId="root"
+                  password="root">
+                    针对mysql数据库
+                    <property name="useInformationSchema" value="true"></property>
+          </jdbcConnection> -->
         <!-- JDBC 连接信息 -->
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="jdbc:oracle:thin:@rac-scan.lettydomain.com:1521/pengrun" userId="deveagle02"
@@ -71,7 +77,7 @@
             targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录
         -->
         <javaModelGenerator targetPackage="com.paulzhangcc.demo.dao.oracle.DO"
-                            targetProject="../src/main/java">
+                            targetProject="C:\pengrun\work\dubbostudy\demo\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
             <property name="trimStrings" value="true"/>
@@ -84,7 +90,7 @@
         targetPackage/targetProject:同javaModelGenerator
         -->
         <sqlMapGenerator targetPackage="com.paulzhangcc.demo.dao.oracle.XML"
-                         targetProject="../src/main/java">
+                         targetProject="C:\pengrun\work\dubbostudy\demo\src\main\java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
@@ -98,7 +104,7 @@
         -->
         <javaClientGenerator type="ANNOTATEDMAPPER"
                              targetPackage="com.paulzhangcc.demo.dao.oracle.mapper"
-                             targetProject="../src/main/java">
+                             targetProject="C:\pengrun\work\dubbostudy\demo\src\main\java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
             <!-- 可以为所有生成的接口添加一个父接口，但是MBG只负责生成，不负责检查

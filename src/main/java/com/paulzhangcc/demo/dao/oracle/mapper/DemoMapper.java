@@ -13,12 +13,20 @@ import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
 public interface DemoMapper {
+    /**
+     *
+     * @mbg.generated
+     */
     @Delete({
         "delete from DEMO",
         "where ID = #{id,jdbcType=NUMERIC}"
     })
     int deleteByPrimaryKey(Long id);
 
+    /**
+     *
+     * @mbg.generated
+     */
     @Insert({
         "insert into DEMO (ID, USER_NAME, ",
         "AMOUNT, AGE, CASH, ",
@@ -30,10 +38,18 @@ public interface DemoMapper {
     @SelectKey(statement="SELECT S_DEMO.NEXTVAL FROM DUAL", keyProperty="id", before=true, resultType=Long.class)
     int insert(DemoDO record);
 
+    /**
+     *
+     * @mbg.generated
+     */
     @InsertProvider(type=DemoSqlProvider.class, method="insertSelective")
     @SelectKey(statement="SELECT S_DEMO.NEXTVAL FROM DUAL", keyProperty="id", before=true, resultType=Long.class)
     int insertSelective(DemoDO record);
 
+    /**
+     *
+     * @mbg.generated
+     */
     @Select({
         "select",
         "ID, USER_NAME, AMOUNT, AGE, CASH, \"COMMENT\"",
@@ -50,9 +66,17 @@ public interface DemoMapper {
     })
     DemoDO selectByPrimaryKey(Long id);
 
+    /**
+     *
+     * @mbg.generated
+     */
     @UpdateProvider(type=DemoSqlProvider.class, method="updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(DemoDO record);
 
+    /**
+     *
+     * @mbg.generated
+     */
     @Update({
         "update DEMO",
         "set USER_NAME = #{userName,jdbcType=VARCHAR},",

@@ -5,6 +5,10 @@ import org.apache.ibatis.jdbc.SQL;
 
 public class DemoSqlProvider {
 
+    /**
+     *
+     * @mbg.generated
+     */
     public String insertSelective(DemoDO record) {
         SQL sql = new SQL();
         sql.INSERT_INTO("DEMO");
@@ -34,6 +38,10 @@ public class DemoSqlProvider {
         return sql.toString();
     }
 
+    /**
+     *
+     * @mbg.generated
+     */
     public String updateByPrimaryKeySelective(DemoDO record) {
         SQL sql = new SQL();
         sql.UPDATE("DEMO");
