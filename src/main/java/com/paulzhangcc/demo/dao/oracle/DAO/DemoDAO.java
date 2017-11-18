@@ -4,7 +4,6 @@ package com.paulzhangcc.demo.dao.oracle.DAO;
 import com.paulzhangcc.demo.constant.ConfigConsts;
 import com.paulzhangcc.demo.dao.oracle.DO.DemoDO;
 import com.paulzhangcc.demo.dao.oracle.mapper.DemoMapper;
-import com.paulzhangcc.demo.util.mybatis.SQLDialect;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 
@@ -13,15 +12,6 @@ import java.util.List;
 
 @Mapper
 public interface DemoDAO extends DemoMapper {
-    @Insert({
-            "insert into DEMO (ID, USER_NAME, ",
-            "AMOUNT, AGE, CASH)",
-            "values (#{id,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, ",
-            "#{amount,jdbcType=DECIMAL}, #{age,jdbcType=DECIMAL}, #{cash,jdbcType=DECIMAL})"
-    })
-    @SelectKey(before = SQLDialect.SelectKey.before, resultType = Long.class, keyProperty = "id", statement = { SQLDialect.SelectKey.S_DEMO })
-    int insert(DemoDO record);
-
     @Select({
             "select",
             "ID, USER_NAME, AMOUNT, AGE, CASH",

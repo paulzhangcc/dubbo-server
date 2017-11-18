@@ -8,16 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SQLDialect {
-
-	/**
-	 * @SelectKey(before = SQLDialect.SelectKey.before, resultType = Integer.class, keyProperty = "loanId", statement = { SQLDialect.SelectKey.LOAN })
-	 */
-	public static class SelectKey {
-		public static final boolean before = true;
-		public static final boolean after = false;
-		public static final String S_DEMO = "SELECT s_demo.nextval FROM dual";
-	}
-
+	
 	private static final Logger logger = LoggerFactory.getLogger(SQLDialect.class);
 
 	private static final ConcurrentHashMap<String, String> CACHE = new ConcurrentHashMap<>();

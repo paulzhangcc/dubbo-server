@@ -22,21 +22,23 @@
 
     <context id="oracle" targetRuntime="MyBatis3">
         <!--
-        自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；
-        一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖
-         -->
-        <property name="autoDelimitKeywords" value="false"/>
+        当表名或者字段名为SQL关键字的时候，可以设置该属性为true，MBG会自动给表名或字段名添加**分隔符（beginningDelimiter，beginningDelimiter）**。-->
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value='"' />
+        <property name="endingDelimiter" value='"' />
         <!-- 生成的Java文件的编码 -->
         <property name="javaFileEncoding" value="UTF-8"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
-        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+
+        <!--在table中关闭了所有example增删改查-->
+       <!-- <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
             <property name="searchString" value="DOExample$"/>
             <property name="replaceString" value="Example"/>
-        </plugin>
+        </plugin>-->
 
         <commentGenerator>
-            <property name="suppressAllComments" value="false"/>
+            <property name="suppressAllComments" value="true"/>
             <property name="suppressDate" value="true"/>
         </commentGenerator>
 
@@ -107,8 +109,14 @@
                sqlProviderName="DemoSqlProvider" domainObjectName="DemoDO"
                enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"
+               enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+               selectByPrimaryKeyQueryId="true"
+
         >
+            <!--false 为使用驼峰-->
             <property name="useActualColumnNames" value="false"/>
+            <!--对于自增序列需要加-->
+            <generatedKey column="ID" sqlStatement="SELECT S_DEMO.NEXTVAL FROM DUAL"/>
         </table>
     </context>
 </generatorConfiguration>  

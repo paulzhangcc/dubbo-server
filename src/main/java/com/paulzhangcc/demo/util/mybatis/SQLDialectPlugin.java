@@ -56,7 +56,7 @@ public class SQLDialectPlugin implements Interceptor {
             FieldUtils.writeField(boundSql, "sql", dialectSql, true);
         }
         if (logger.isDebugEnabled()){
-            logger.debug("执行sql的内容如下:\n{}\n请求的参数:{}\n",dialectSql.toUpperCase(),parameterObj);
+            logger.debug("执行sql的内容如下:\n{}\n请求的参数:{}\n",dialectSql,parameterObj);
 
         }
         return invocation.proceed();
