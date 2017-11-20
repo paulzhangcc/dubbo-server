@@ -24,18 +24,18 @@
         <!--
         当表名或者字段名为SQL关键字的时候，可以设置该属性为true，MBG会自动给表名或字段名添加**分隔符（beginningDelimiter，beginningDelimiter）**。-->
         <property name="autoDelimitKeywords" value="true"/>
-        <property name="beginningDelimiter" value='"' />
-        <property name="endingDelimiter" value='"' />
+        <property name="beginningDelimiter" value='"'/>
+        <property name="endingDelimiter" value='"'/>
         <!-- 生成的Java文件的编码 -->
         <property name="javaFileEncoding" value="UTF-8"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
 
         <!--在table中关闭了所有example增删改查-->
-       <!-- <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
-            <property name="searchString" value="DOExample$"/>
-            <property name="replaceString" value="Example"/>
-        </plugin>-->
+        <!-- <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+             <property name="searchString" value="DOExample$"/>
+             <property name="replaceString" value="Example"/>
+         </plugin>-->
 
         <commentGenerator type="com.paulzhangcc.mybatis.generator.CommentGeneratorHelper">
             <property name="suppressAllComments" value="fase"/>
