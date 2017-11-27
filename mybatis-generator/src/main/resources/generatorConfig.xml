@@ -19,7 +19,7 @@
             2，MyBatis3Simple：类似MyBatis3，只是不生成XXXBySample；
         introspectedColumnImpl：类全限定名，用于扩展MBG
     -->
-
+    <!--targetRuntime="com.paulzhangcc.mybatis.generator.IntrospectedTableMyBatis3ImplHelper"-->
     <context id="oracle" targetRuntime="MyBatis3">
         <!--
         当表名或者字段名为SQL关键字的时候，可以设置该属性为true，MBG会自动给表名或字段名添加**分隔符（beginningDelimiter，beginningDelimiter）**。-->
@@ -102,7 +102,7 @@
                 3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
             注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER
         -->
-        <javaClientGenerator type="ANNOTATEDMAPPER"
+        <javaClientGenerator type="MIXEDMAPPER"
                              targetPackage="com.paulzhangcc.demo.dao.oracle.mapper"
                              targetProject="C:\pengrun\work\dubbostudy\demo\src\main\java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
@@ -111,13 +111,9 @@
                 <property name="rootInterface" value=""/>
             -->
         </javaClientGenerator>
-        <table tableName="Demo" mapperName="DemoMapper"
-               sqlProviderName="DemoSqlProvider" domainObjectName="DemoDO"
+        <table tableName="Demo" mapperName="DemoDAO" domainObjectName="DemoDO"
                enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"
-               enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
-               selectByPrimaryKeyQueryId="true"
-
         >
             <!--false 为使用驼峰-->
             <property name="useActualColumnNames" value="false"/>

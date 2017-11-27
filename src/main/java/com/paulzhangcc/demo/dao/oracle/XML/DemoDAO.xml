@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.paulzhangcc.demo.dao.oracle.mapper.DemoDAO">
+  <resultMap id="BaseResultMap" type="com.paulzhangcc.demo.dao.oracle.DO.DemoDO">
+    <id column="ID" jdbcType="NUMERIC" property="id" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="AMOUNT" jdbcType="NUMERIC" property="amount" />
+    <result column="AGE" jdbcType="NUMERIC" property="age" />
+    <result column="CASH" jdbcType="NUMERIC" property="cash" />
+    <result column="COMMENT" jdbcType="VARCHAR" property="comment" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, USER_NAME, AMOUNT, AGE, CASH, "COMMENT"
+  </sql>
+  <insert id="insertSelective" parameterType="com.paulzhangcc.demo.dao.oracle.DO.DemoDO">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT S_DEMO.NEXTVAL FROM DUAL
+    </selectKey>
+    insert into DEMO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      ID,
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="amount != null">
+        AMOUNT,
+      </if>
+      <if test="age != null">
+        AGE,
+      </if>
+      <if test="cash != null">
+        CASH,
+      </if>
+      <if test="comment != null">
+        "COMMENT",
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=NUMERIC},
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=NUMERIC},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=NUMERIC},
+      </if>
+      <if test="cash != null">
+        #{cash,jdbcType=NUMERIC},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.paulzhangcc.demo.dao.oracle.DO.DemoDO">
+    update DEMO
+    <set>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        AMOUNT = #{amount,jdbcType=NUMERIC},
+      </if>
+      <if test="age != null">
+        AGE = #{age,jdbcType=NUMERIC},
+      </if>
+      <if test="cash != null">
+        CASH = #{cash,jdbcType=NUMERIC},
+      </if>
+      <if test="comment != null">
+        "COMMENT" = #{comment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=NUMERIC}
+  </update>
+</mapper>

@@ -40,3 +40,6 @@ com.paulzhang.demo
         ZookeeperLock.java
     spring               ---spring 相关的内容
     *Application.java
+
+
+    对于mybatis 复杂的sql 使用xml 简单的使用注解，优先级是注解--》xml

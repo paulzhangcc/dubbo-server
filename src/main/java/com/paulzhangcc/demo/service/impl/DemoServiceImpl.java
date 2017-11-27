@@ -1,7 +1,7 @@
 package com.paulzhangcc.demo.service.impl;
 
-import com.paulzhangcc.demo.dao.oracle.DAO.DemoDAO;
 import com.paulzhangcc.demo.dao.oracle.DO.DemoDO;
+import com.paulzhangcc.demo.dao.oracle.mapper.DemoDAO;
 import com.paulzhangcc.demo.service.api.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

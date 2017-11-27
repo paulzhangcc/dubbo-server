@@ -40,7 +40,7 @@ public class SQLDialectPlugin implements Interceptor {
         Object parameterObj = parameterHandler.getParameterObject();
 
         if (!sql.equalsIgnoreCase(dialectSql)) {
-            if (parameterObj != null && parameterObj.toString().indexOf("offset") != -1) {
+            if (parameterObj != null && parameterObj.toString().indexOf(OFFSET) != -1) {
                 Map obj = (Map) parameterObj;
                 Set<String> s = obj.keySet();// 获取KEY集合
                 for (String str : s) {
