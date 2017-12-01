@@ -51,6 +51,12 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
             <version>0.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -64,10 +70,13 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.axet/kaptcha -->
+
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -108,7 +117,7 @@
         </repository>
         <repository>
             <id>maven-ali</id>
-            <url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
