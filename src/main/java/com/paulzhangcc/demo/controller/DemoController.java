@@ -40,6 +40,7 @@ public class DemoController {
         demo.setUserName("张呵呵");
 
         int insert = demoService.insert(demo);
+       logger.info("插入成功:"+demo);
         if (insert == 1) {
             ApplicationContextHelper.applicationContext.publishEvent(new DemoEvent(this));
             return "Y";

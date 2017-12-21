@@ -34,7 +34,8 @@ public class SQLDialectPlugin implements Interceptor {
         Object parameterObj = parameterHandler.getParameterObject();
 
         if (logger.isDebugEnabled()){
-            logger.debug("执行sql的内容如下:\n{}\n请求的参数:{}\n",sql.toLowerCase(),parameterObj);
+            logger.debug("\n\t\t[执行sql的内容如下]:{}\n\t\t" +
+                               "[    sql请求的参数]:{}",sql.toLowerCase(),parameterObj);
 
         }
         return invocation.proceed();

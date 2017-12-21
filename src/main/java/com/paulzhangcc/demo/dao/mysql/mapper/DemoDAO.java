@@ -25,12 +25,10 @@ public interface DemoDAO {
      * @mbg.generated
      */
     @Insert({
-        "insert into demo (id, user_name, ",
-        "age)",
-        "values (#{id,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, ",
-        "#{age,jdbcType=INTEGER})"
+        "insert into demo (user_name, age)",
+        "values (#{userName,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})"
     })
-    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=true, resultType=Long.class)
+    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Long.class)
     int insert(DemoDO record);
 
     /**

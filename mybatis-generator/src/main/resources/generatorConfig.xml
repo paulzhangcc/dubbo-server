@@ -112,7 +112,7 @@
             <!--false 为使用驼峰-->
             <property name="useActualColumnNames" value="false"/>
             <!--对于自增序列需要加-->
-            <generatedKey column="ID" sqlStatement="MySql"/>
+            <generatedKey column="ID" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
 </generatorConfiguration>
