@@ -8,6 +8,7 @@ import java.util.List;
 import static com.paulzhangcc.demo.constant.ConfigConsts.OFFSET;
 import static com.paulzhangcc.demo.constant.ConfigConsts.PAGESIZE;
 
+@Mapper
 public interface DemoDAO {
     /**
      *

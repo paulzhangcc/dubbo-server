@@ -13,4 +13,7 @@
 	   	<!--<typeHandler javaType="String" jdbcType="LONGVARCHAR" handler="net.zkbc.p2p.util.LimingClobTypeHandler"/>-->
 	   	<typeHandler javaType="java.sql.Blob" handler="org.apache.ibatis.type.BlobTypeHandler"/>
 	</typeHandlers>
+	<plugins>
+		<plugin interceptor="com.paulzhangcc.demo.util.mybatis.SQLDialectPlugin"></plugin>
+	</plugins>
 </configuration>

@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@MapperScan("com.paulzhangcc.demo.dao") //注入mybatis配置文件
+@MapperScan("com.paulzhangcc.demo.dao.mysql.mapper") //注入mybatis配置文件
 @ImportResource(locations={"classpath:spring/application*.xml"}) //映入spring配置
 @EnableTransactionManagement
 @EnableAsync
