@@ -24,8 +24,8 @@
         <!--
         当表名或者字段名为SQL关键字的时候，可以设置该属性为true，MBG会自动给表名或字段名添加**分隔符（beginningDelimiter，beginningDelimiter）**。-->
         <property name="autoDelimitKeywords" value="true"/>
-        <property name="beginningDelimiter" value='"'/>
-        <property name="endingDelimiter" value='"'/>
+        <property name="beginningDelimiter" value='`'/>
+        <property name="endingDelimiter" value='`'/>
         <!-- 生成的Java文件的编码 -->
         <property name="javaFileEncoding" value="UTF-8"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
