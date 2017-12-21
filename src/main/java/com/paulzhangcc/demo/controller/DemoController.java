@@ -1,7 +1,8 @@
 package com.paulzhangcc.demo.controller;
 
-import com.paulzhangcc.demo.dao.oracle.DO.DemoDO;
-import com.paulzhangcc.demo.dao.oracle.mapper.DemoDAO;
+
+import com.paulzhangcc.demo.dao.mysql.DO.DemoDO;
+import com.paulzhangcc.demo.dao.mysql.mapper.DemoDAO;
 import com.paulzhangcc.demo.event.demo.DemoEvent;
 import com.paulzhangcc.demo.rpc.api.DemoFacadeService;
 import com.paulzhangcc.demo.rpc.dto.DemoDTO;
@@ -50,15 +51,6 @@ public class DemoController {
         return demoFacadeService.top();
     }
 
-    @RequestMapping("/all")
-    public List<DemoDO> all() {
-        return demoDAO.selectAll();
-    }
-
-    @RequestMapping("/top")
-    public List<DemoDO> top() {
-        return demoDAO.top10();
-    }
 
     @RequestMapping("/limit")
     public List<DemoDO> limit(Integer offset, Integer pagesize) {

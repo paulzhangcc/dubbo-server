@@ -43,3 +43,7 @@ com.paulzhang.demo
 
 
     对于mybatis 复杂的sql 使用xml 简单的使用注解，优先级是注解--》xml
+
+
+
+    数据库:sql使用小写 id  user_name

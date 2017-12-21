@@ -1,6 +1,6 @@
 package com.paulzhangcc.demo.service.api;
 
-import com.paulzhangcc.demo.dao.oracle.DO.DemoDO;
+import com.paulzhangcc.demo.dao.mysql.DO.DemoDO;
 
 import java.util.List;
 
@@ -10,7 +10,6 @@ import java.util.List;
 public interface DemoService {
     int insert(DemoDO demoDO);
 
-    List<DemoDO> top();
 
     List<DemoDO> limit(Integer offset,Integer pagesize);
 }

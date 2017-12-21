@@ -20,7 +20,7 @@
         introspectedColumnImpl：类全限定名，用于扩展MBG
     -->
     <!--targetRuntime="com.paulzhangcc.mybatis.generator.IntrospectedTableMyBatis3ImplHelper"-->
-    <context id="oracle" targetRuntime="MyBatis3">
+    <context id="mysql" targetRuntime="MyBatis3">
         <!--
         当表名或者字段名为SQL关键字的时候，可以设置该属性为true，MBG会自动给表名或字段名添加**分隔符（beginningDelimiter，beginningDelimiter）**。-->
         <property name="autoDelimitKeywords" value="true"/>
@@ -42,18 +42,12 @@
             <property name="suppressDate" value="true"/>
         </commentGenerator>
         <!-- mysql配置 -->
-        <!--   <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                  connectionURL="jdbc:mysql://localhost:3306/bookshop" userId="root"
+          <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                  connectionURL="jdbc:mysql://127.0.0.1:3306/paulzhangcc?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false" userId="root"
                   password="root">
-                    针对mysql数据库
                     <property name="useInformationSchema" value="true"></property>
-          </jdbcConnection> -->
+          </jdbcConnection>
         <!-- JDBC 连接信息 -->
-        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-                        connectionURL="jdbc:oracle:thin:@rac-scan.lettydomain.com:1521/pengrun" userId="deveagle02"
-                        password="deveagle02">
-            <property name="remarksReporting" value="true"></property>
-        </jdbcConnection>
 
         <!-- java类型处理器
        用于处理DB中的类型到Java中的类型，默认使用JavaTypeResolverDefaultImpl；
@@ -76,7 +70,7 @@
             targetPackage：生成的类要放的包，真实的包受enableSubPackages属性控制；
             targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录
         -->
-        <javaModelGenerator targetPackage="com.paulzhangcc.demo.dao.oracle.DO"
+        <javaModelGenerator targetPackage="com.paulzhangcc.demo.dao.mysql.DO"
                             targetProject="C:\pengrun\work\dubbostudy\demo\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
@@ -89,7 +83,7 @@
             或者只使用Mapper接口+Annotation，所以，如果 javaClientGenerator配置中配置了需要生成XML的话，这个元素就必须配置
         targetPackage/targetProject:同javaModelGenerator
         -->
-        <sqlMapGenerator targetPackage="com.paulzhangcc.demo.dao.oracle.XML"
+        <sqlMapGenerator targetPackage="com.paulzhangcc.demo.dao.mysql.XML"
                          targetProject="C:\pengrun\work\dubbostudy\demo\src\main\java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
@@ -103,7 +97,7 @@
             注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER
         -->
         <javaClientGenerator type="MIXEDMAPPER"
-                             targetPackage="com.paulzhangcc.demo.dao.oracle.mapper"
+                             targetPackage="com.paulzhangcc.demo.dao.mysql.mapper"
                              targetProject="C:\pengrun\work\dubbostudy\demo\src\main\java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
@@ -118,7 +112,8 @@
             <!--false 为使用驼峰-->
             <property name="useActualColumnNames" value="false"/>
             <!--对于自增序列需要加-->
-            <generatedKey column="ID" sqlStatement="SELECT S_DEMO.NEXTVAL FROM DUAL"/>
+            <generatedKey column="ID" sqlStatement="MySql"/>
         </table>
     </context>
-</generatorConfiguration>  
+</generatorConfiguration>
+

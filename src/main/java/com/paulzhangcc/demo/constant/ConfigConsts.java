@@ -14,7 +14,5 @@ public class ConfigConsts {
      */
     public static final String PAGESIZE = "pagesize";
 
-    public static final String SQL_LIMIT = " limit #{offset},#{pagesize}";
-
 
 }
