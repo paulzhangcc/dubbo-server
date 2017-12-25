@@ -6,6 +6,7 @@ import com.paulzhangcc.demo.dao.mysql.mapper.DemoDAO;
 import com.paulzhangcc.demo.service.api.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,9 +18,12 @@ public class DemoServiceImpl implements DemoService {
     @Autowired
     private DemoDAO demoDAO;
 
+
     @Override
+    @Transactional
     public int insert(DemoDO demoDO) {
-        return demoDAO.insert(demoDO);
+        int insert = demoDAO.insert(demoDO);
+        return insert;
     }
 
 
