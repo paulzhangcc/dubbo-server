@@ -2,7 +2,6 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<settings>
-        <!--<setting name="logImpl" value="STDOUT_LOGGING" />-->
 		<setting name="jdbcTypeForNull" value="NULL"/>
 		<setting name="useGeneratedKeys" value="true"/>
 		<!--<setting name="logImpl" value="STDOUT_LOGGING" />-->
@@ -14,6 +13,6 @@
 	   	<typeHandler javaType="java.sql.Blob" handler="org.apache.ibatis.type.BlobTypeHandler"/>
 	</typeHandlers>
 	<plugins>
-		<plugin interceptor="com.paulzhangcc.demo.util.mybatis.SQLDialectPlugin"></plugin>
+		<plugin interceptor="com.paulzhangcc.sharing.mybatis.SQLDialectPlugin"></plugin>
 	</plugins>
 </configuration>

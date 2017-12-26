@@ -7,7 +7,8 @@ import com.paulzhangcc.demo.event.demo.DemoEvent;
 import com.paulzhangcc.demo.rpc.api.DemoFacadeService;
 import com.paulzhangcc.demo.rpc.dto.DemoDTO;
 import com.paulzhangcc.demo.service.api.DemoService;
-import com.paulzhangcc.demo.spring.ApplicationContextHelper;
+import com.paulzhangcc.sharing.message.SmsFacade;
+import com.paulzhangcc.sharing.spring.ApplicationContextHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,13 @@ public class DemoController {
     @Autowired
     private DemoService demoService;
     @Autowired
+    SmsFacade smsFacade;
+    @Autowired
     private DemoFacadeService demoFacadeService;
 
     @Autowired
-    private RedisTemplate<String,String> redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
+
     @Autowired
     private DemoDAO demoDAO;
 
@@ -40,13 +44,14 @@ public class DemoController {
         demo.setUserName("张呵呵");
 
         int insert = demoService.insert(demo);
-       logger.info("插入成功:"+demo);
+        logger.info("插入成功:" + demo);
         if (insert == 1) {
             ApplicationContextHelper.applicationContext.publishEvent(new DemoEvent(this));
             return "Y";
         }
         return "N";
     }
+
     @RequestMapping("/top10")
     public List<DemoDTO> top10() {
         return demoFacadeService.top();
@@ -61,9 +66,10 @@ public class DemoController {
 
     @RequestMapping("/set")
     public boolean set(String key, String value) {
-        redisTemplate.opsForValue().set(key,value);
+        redisTemplate.opsForValue().set(key, value);
         return true;
     }
+
     @RequestMapping("/get")
     public String get(String key) {
         return redisTemplate.opsForValue().get(key);
@@ -71,10 +77,15 @@ public class DemoController {
 
     @RequestMapping("/update")
     public int update() {
-        DemoDO demoDO =new DemoDO();
+        DemoDO demoDO = new DemoDO();
         demoDO.setId(-1L);
         demoDO.setAge(1);
         return demoDAO.updateByPrimaryKeySelective(demoDO);
+    }
+
+    @RequestMapping("/sendMessage")
+    public boolean sendMessage() {
+        return smsFacade.sendVerificationCode("18600787844", "11111");
     }
 
 }

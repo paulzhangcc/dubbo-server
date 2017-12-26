@@ -19,7 +19,7 @@ public class Check {
     }
     public static void checkDuplicate(String path) {
         try {
-// 在ClassPath搜文件
+            // 在ClassPath搜文件
             Enumeration<URL> urls = Thread.currentThread().getContextClassLoader()
             .getResources(path);
             Set files = new HashSet();

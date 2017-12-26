@@ -1,5 +1,6 @@
-package com.paulzhangcc.demo.lock;
+package com.paulzhangcc.sharing.lock.redis;
 
+import com.paulzhangcc.sharing.lock.Lock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +16,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class RedisLock implements Lock {
     private final static Logger logger = LoggerFactory.getLogger(RedisLock.class);
-    /**
-     * 单个锁有效期(如何设置:通过数据库事物提交的时间作为参考值)
-     */
-    private static final int DEFAULT_SINGLE_EXPIRE = 100;
 
-    /**
-     * 批量锁有效期(如何设置:通过数据库事物提交的时间作为参考值)
-     */
-    private static final int DEFAULT_BATCH_EXPIRE = 100;
-    /**
-     * 尝试间隔时间
-     */
-    private static int sleep = 100;
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -69,7 +58,7 @@ public class RedisLock implements Lock {
                 Thread.sleep(sleep);
             } while ((System.nanoTime() - nano) < unit.toNanos(timeout));
         } catch (Exception e) {
-            logger.error("获取锁异常！", e);
+            logger.error("获取"+key+"锁异常！", e);
         }
         return Boolean.FALSE;
     }

@@ -1,8 +1,5 @@
-package com.paulzhangcc.demo.util.mybatis;
+package com.paulzhangcc.sharing.mybatis;
 
-/**
- * Created by paul on 2017/11/16.
- */
 
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.apache.ibatis.executor.parameter.ParameterHandler;

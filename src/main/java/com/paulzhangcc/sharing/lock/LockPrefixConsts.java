@@ -1,4 +1,4 @@
-package com.paulzhangcc.demo.lock;
+package com.paulzhangcc.sharing.lock;
 
 /**
  * Created by paul on 2017/11/27.

@@ -1,4 +1,6 @@
-package com.paulzhangcc.demo.lock;
+package com.paulzhangcc.sharing.lock.zookeeper;
+
+import com.paulzhangcc.sharing.lock.Lock;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -6,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by paul on 2017/11/16.
  */
-public class ZookeeperLock implements Lock{
+public class ZookeeperLock implements Lock {
     @Override
     public void lock(String key) {
 

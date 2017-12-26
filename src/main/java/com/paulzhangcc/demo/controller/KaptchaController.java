@@ -1,7 +1,10 @@
 package com.paulzhangcc.demo.controller;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,8 +22,12 @@ import java.io.ByteArrayOutputStream;
 @Controller
 public class KaptchaController {
 
+    private static final Logger logger = LoggerFactory.getLogger(DemoController.class);
     @Autowired
     DefaultKaptcha defaultKaptcha;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @RequestMapping("/defaultKaptcha")
     public void defaultKaptcha(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
@@ -29,6 +36,7 @@ public class KaptchaController {
         try {
             //生产验证码字符串并保存到session中
             String createText = defaultKaptcha.createText();
+            logger.info("图形验证码:[{}]",createText);
             //TODO
             //httpServletRequest.getSession().setAttribute("vrifyCode", createText);
             //使用生产的验证码字符串返回一个BufferedImage对象并转为byte写入到byte数组中

@@ -1,11 +1,23 @@
-package com.paulzhangcc.demo.lock;
+package com.paulzhangcc.sharing.lock;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
 public interface Lock {
+    /**
+     * 单个锁有效期(如何设置:通过数据库事物提交的时间作为参考值)
+     */
+    public static final int DEFAULT_SINGLE_EXPIRE = 100;
 
+    /**
+     * 批量锁有效期(如何设置:通过数据库事物提交的时间作为参考值)
+     */
+    public static final int DEFAULT_BATCH_EXPIRE = 100;
+    /**
+     * 尝试间隔时间
+     */
+    public static final int sleep = 100;
     /**
      * 如果锁空闲立即返回，否则阻塞等待
      * @param key

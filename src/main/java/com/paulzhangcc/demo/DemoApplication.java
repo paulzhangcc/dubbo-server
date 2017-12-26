@@ -3,6 +3,7 @@ package com.paulzhangcc.demo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -12,11 +13,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ImportResource(locations={"classpath:spring/application*.xml"}) //映入spring配置
 @EnableTransactionManagement
 @EnableAsync
+@ComponentScan("com.paulzhangcc")
 public class DemoApplication {
 
-	static {
-		Check.checkDuplicate(DemoApplication.class);
-	}
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}

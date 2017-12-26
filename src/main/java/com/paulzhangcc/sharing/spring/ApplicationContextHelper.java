@@ -1,4 +1,4 @@
-package com.paulzhangcc.demo.spring;
+package com.paulzhangcc.sharing.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
