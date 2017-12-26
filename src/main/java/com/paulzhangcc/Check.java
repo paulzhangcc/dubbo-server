@@ -1,4 +1,4 @@
-package com.paulzhangcc.demo;
+package com.paulzhangcc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

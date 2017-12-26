@@ -1,4 +1,4 @@
-package com.paulzhangcc.demo;
+package com.paulzhangcc;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
