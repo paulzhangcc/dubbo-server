@@ -23,5 +23,16 @@ public class SharingProperties {
     private Boolean isOpenSms = Boolean.TRUE ;
 
 
+    public String getFileSystemRoot() {
+        return fileSystemRoot;
+    }
+
+    public void setFileSystemRoot(String fileSystemRoot) {
+        this.fileSystemRoot = fileSystemRoot;
+    }
+
+    private String fileSystemRoot = "/";
+
+
 
 }

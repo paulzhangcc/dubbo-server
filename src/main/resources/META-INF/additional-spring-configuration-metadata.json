@@ -6,6 +6,13 @@
       "description": "control real sms send",
       "sourceType": "com.paulzhangcc.sharing.SharingProperties",
       "defaultValue": "true"
+    },
+    {
+      "name": "custom.sharing.file-system-root",
+      "type": "java.lang.String",
+      "description": "filesystem  root",
+      "sourceType": "com.paulzhangcc.sharing.SharingProperties",
+      "defaultValue": "/"
     }
   ]
 }
