@@ -6,7 +6,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import static com.paulzhangcc.demo.spring.Configuration.ASYNC_LISTENER;
+import static com.paulzhangcc.demo.spring.DemoSpringConfig.ASYNC_LISTENER;
+
 
 /**
  * Created by paul on 2017/11/16.

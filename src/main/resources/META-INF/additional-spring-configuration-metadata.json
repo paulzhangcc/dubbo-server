@@ -1,0 +1,12 @@
+{
+  "properties": [
+    {
+      "name": "custom.sharing.open-sms",
+      "type": "java.lang.Boolean",
+      "description": "control real sms send",
+      "sourceType": "com.paulzhangcc.sharing.SharingProperties",
+      "defaultValue": "true"
+    }
+  ]
+}
+

@@ -1,26 +1,17 @@
-package com.paulzhangcc.demo.spring;
+package com.paulzhangcc.sharing;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
-import com.google.code.kaptcha.util.Config;
 import org.springframework.context.annotation.Bean;
-import org.springframework.scheduling.config.TaskExecutorFactoryBean;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.Properties;
 
 /**
- * Created by paul on 2017/11/17.
+ * @author paul
+ * @date 2017/12/27
  */
-@org.springframework.context.annotation.Configuration
-public class Configuration {
-    public static final String ASYNC_LISTENER = "ASYNC_LISTENER";
-
-    @Bean(ASYNC_LISTENER)
-    public TaskExecutorFactoryBean ayncListener() {
-        TaskExecutorFactoryBean taskExecutorFactoryBean = new TaskExecutorFactoryBean();
-        taskExecutorFactoryBean.setBeanName(ASYNC_LISTENER);
-        return taskExecutorFactoryBean;
-    }
-
+@Configuration
+public class SharingSpringConfig {
     /**
      * 图形验证码配置类
      *
@@ -73,7 +64,7 @@ public class Configuration {
         //背景颜色渐变， 结束颜色
         properties.setProperty("kaptcha.background.clear.to", "white");
 
-        Config config = new Config(properties);
+        com.google.code.kaptcha.util.Config config = new com.google.code.kaptcha.util.Config(properties);
         DefaultKaptcha defaultKaptcha = new DefaultKaptcha();
         defaultKaptcha.setConfig(config);
         return defaultKaptcha;

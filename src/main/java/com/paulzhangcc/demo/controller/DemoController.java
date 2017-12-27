@@ -7,6 +7,7 @@ import com.paulzhangcc.demo.event.demo.DemoEvent;
 import com.paulzhangcc.demo.rpc.api.DemoFacadeService;
 import com.paulzhangcc.demo.rpc.dto.DemoDTO;
 import com.paulzhangcc.demo.service.api.DemoService;
+import com.paulzhangcc.sharing.SharingProperties;
 import com.paulzhangcc.sharing.message.SmsFacade;
 import com.paulzhangcc.sharing.spring.ApplicationContextHelper;
 import org.slf4j.Logger;
@@ -86,6 +87,13 @@ public class DemoController {
     @RequestMapping("/sendMessage")
     public boolean sendMessage() {
         return smsFacade.sendVerificationCode("18600787844", "11111");
+    }
+
+    @Autowired
+    SharingProperties sharingProperties;
+    @RequestMapping("/config")
+    public Boolean config() {
+        return sharingProperties.getOpenSms();
     }
 
 }
