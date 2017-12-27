@@ -1,6 +1,6 @@
 package com.paulzhangcc.sharing.message.hanlders;
 
-import com.paulzhangcc.sharing.message.model.InsertDB;
+import com.paulzhangcc.sharing.message.model.MessageDO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,11 +12,11 @@ import java.util.List;
  */
 public class SmsPutDbHandler extends AbstractSmsSendHanlder{
     private static Logger logger = LoggerFactory.getLogger(SmsPutDbHandler.class);
-    public List<InsertDB.InsertBeanDB> source;
+    public List<MessageDO> source;
     public SmsPutDbHandler(){
 
     }
-    public SmsPutDbHandler(List<InsertDB.InsertBeanDB> source) {
+    public SmsPutDbHandler(List<MessageDO> source) {
         this.source = source;
     }
 

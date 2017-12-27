@@ -25,14 +25,26 @@ public abstract class AbstractSmsSendHanlder implements Runnable {
         name = name();
     }
 
+    /**
+     * handler 名称
+     * @return
+     */
     protected abstract String name();
 
+    /**
+     * handler 处理的内容
+     * @return
+     */
     protected abstract Object content();
 
     public boolean canSend() {
         return canSend;
     }
 
+    /**
+     * handler 执行内容
+     * @return
+     */
     public abstract boolean send();
 
     protected void success() {

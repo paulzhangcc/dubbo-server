@@ -1,7 +1,7 @@
 package com.paulzhangcc.demo.service.impl;
 
 
-import com.paulzhangcc.demo.dao.mysql.DO.DemoDO;
+import com.paulzhangcc.demo.dao.mysql.model.DemoDO;
 import com.paulzhangcc.demo.dao.mysql.mapper.DemoDAO;
 import com.paulzhangcc.demo.service.api.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;

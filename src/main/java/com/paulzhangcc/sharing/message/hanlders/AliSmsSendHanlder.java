@@ -2,7 +2,7 @@ package com.paulzhangcc.sharing.message.hanlders;
 
 import com.paulzhangcc.sharing.annotation.NotThreadSafe;
 import com.paulzhangcc.sharing.message.model.AliSms;
-import com.paulzhangcc.sharing.message.model.InsertDB;
+import com.paulzhangcc.sharing.message.model.MessageInsertDatabase;
 import com.paulzhangcc.sharing.message.queue.TaskQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +40,7 @@ public class AliSmsSendHanlder extends AbstractSmsSendHanlder {
     @Override
     protected void success() {
         super.success();
-        if (aliSms instanceof InsertDB) {
+        if (aliSms instanceof MessageInsertDatabase) {
             TaskQueue.put(new SmsPutDbHandler(aliSms.insert()), SMS_INSERTDB);
         }
     }

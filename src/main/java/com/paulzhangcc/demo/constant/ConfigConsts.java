@@ -1,9 +1,6 @@
 package com.paulzhangcc.demo.constant;
 
-/**
- * Created by paul on 2017/11/16.
- * 系统配置类
- */
+
 public class ConfigConsts {
     /**
      * mybatis 分页参数系统常量：第几页

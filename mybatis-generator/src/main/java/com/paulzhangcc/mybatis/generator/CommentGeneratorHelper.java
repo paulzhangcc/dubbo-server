@@ -17,7 +17,7 @@ import java.util.Properties;
 
 import static org.mybatis.generator.internal.util.StringUtility.isTrue;
 
-public class CommentGeneratorHelper implements CommentGenerator{
+public class CommentGeneratorHelper implements CommentGenerator {
     private Properties properties;
     private Properties systemPro;
     private boolean suppressDate;
@@ -33,24 +33,24 @@ public class CommentGeneratorHelper implements CommentGenerator{
         currentDateStr = (new SimpleDateFormat("yyyy-MM-dd")).format(new Date());
     }
 
+    @Override
     public void addJavaFileComment(CompilationUnit compilationUnit) {
         // add no file level comments by default
         return;
     }
 
-    /**
-     * Adds a suitable comment to warn users that the element was generated, and
-     * when it was generated.
-     */
+    @Override
     public void addComment(XmlElement xmlElement) {
         return;
     }
 
+    @Override
     public void addRootComment(XmlElement rootElement) {
         // add no document level comments by default
         return;
     }
 
+    @Override
     public void addConfigurationProperties(Properties properties) {
         this.properties.putAll(properties);
 
@@ -65,8 +65,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
      * Javadoc tag then the Java merge capability of the eclipse plugin will
      * break.
      *
-     * @param javaElement
-     *            the java element
+     * @param javaElement the java element
      */
     protected void addJavadocTag(JavaElement javaElement, boolean markAsDoNotDelete) {
         javaElement.addJavaDocLine(" *");
@@ -99,6 +98,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
         return result;
     }
 
+    @Override
     public void addClassComment(InnerClass innerClass, IntrospectedTable introspectedTable) {
         if (suppressAllComments) {
             return;
@@ -113,6 +113,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
         innerClass.addJavaDocLine(" */");
     }
 
+    @Override
     public void addEnumComment(InnerEnum innerEnum, IntrospectedTable introspectedTable) {
         if (suppressAllComments) {
             return;
@@ -125,6 +126,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
         innerEnum.addJavaDocLine(" */");
     }
 
+    @Override
     public void addFieldComment(Field field, IntrospectedTable introspectedTable,
                                 IntrospectedColumn introspectedColumn) {
         if (suppressAllComments) {
@@ -138,6 +140,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
         field.addJavaDocLine(" */");
     }
 
+    @Override
     public void addFieldComment(Field field, IntrospectedTable introspectedTable) {
         if (suppressAllComments) {
             return;
@@ -155,6 +158,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
 
     }
 
+    @Override
     public void addGeneralMethodComment(Method method, IntrospectedTable introspectedTable) {
         if (suppressAllComments) {
             return;
@@ -164,6 +168,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
         method.addJavaDocLine(" */");
     }
 
+    @Override
     public void addGetterComment(Method method, IntrospectedTable introspectedTable,
                                  IntrospectedColumn introspectedColumn) {
         if (suppressAllComments) {
@@ -183,6 +188,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
         method.addJavaDocLine(" */");
     }
 
+    @Override
     public void addSetterComment(Method method, IntrospectedTable introspectedTable,
                                  IntrospectedColumn introspectedColumn) {
         if (suppressAllComments) {
@@ -203,6 +209,7 @@ public class CommentGeneratorHelper implements CommentGenerator{
         method.addJavaDocLine(" */");
     }
 
+    @Override
     public void addClassComment(InnerClass innerClass, IntrospectedTable introspectedTable, boolean markAsDoNotDelete) {
         if (suppressAllComments) {
             return;

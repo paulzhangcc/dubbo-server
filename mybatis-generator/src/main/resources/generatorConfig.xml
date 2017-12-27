@@ -70,7 +70,7 @@
             targetPackage：生成的类要放的包，真实的包受enableSubPackages属性控制；
             targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录
         -->
-        <javaModelGenerator targetPackage="com.paulzhangcc.demo.dao.mysql.DO"
+        <javaModelGenerator targetPackage="com.paulzhangcc.demo.dao.mysql.model"
                             targetProject="C:\pengrun\work\dubbostudy\demo\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->

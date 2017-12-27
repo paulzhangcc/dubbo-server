@@ -1,6 +1,6 @@
 package com.paulzhangcc.demo.dao.mysql.mapper;
 
-import com.paulzhangcc.demo.dao.mysql.DO.DemoDO;
+import com.paulzhangcc.demo.dao.mysql.model.DemoDO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

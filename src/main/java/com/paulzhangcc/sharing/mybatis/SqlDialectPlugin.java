@@ -16,8 +16,8 @@ import java.util.Properties;
 
 @Component
 @Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class,Integer.class }) })
-public class SQLDialectPlugin implements Interceptor {
-    private static final Logger logger = LoggerFactory.getLogger(SQLDialectPlugin.class);
+public class SqlDialectPlugin implements Interceptor {
+    private static final Logger logger = LoggerFactory.getLogger(SqlDialectPlugin.class);
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {

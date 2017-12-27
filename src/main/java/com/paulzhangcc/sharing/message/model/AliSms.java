@@ -1,13 +1,12 @@
 package com.paulzhangcc.sharing.message.model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class AliSms implements InsertDB{
+public class AliSms implements MessageInsertDatabase {
     public static  final String CHANNEL = "ALIYUN";
-    //手机号
+    /**
+     * 手机号
+     */
     private String mobile;
 
     public String getMobile() {
@@ -29,34 +28,38 @@ public class AliSms implements InsertDB{
     }
 
     public Map<String, String> getTemplateParam() {
-        return TemplateParam;
+        return templateParam;
     }
 
     public AliSms setTemplateParam(Map<String, String> templateParam) {
-        TemplateParam = templateParam;
+        templateParam = templateParam;
         return this;
     }
-    //短信内容
+
+    /**
+     * 模板编号
+     */
     private String templateCode;
 
-    private Map<String,String> TemplateParam = new HashMap<>();
+    private Map<String,String> templateParam = new HashMap<>();
 
     @Override
     public String toString() {
         return "AliSms{" +
                 "mobile='" + mobile + '\'' +
                 ", templateCode='" + templateCode + '\'' +
-                ", TemplateParam=" + TemplateParam +
+                ", TemplateParam=" + templateParam +
                 '}';
     }
 
     @Override
-    public List<InsertBeanDB> insert() {
-        List<InsertBeanDB> list = new ArrayList<>();
-        InsertBeanDB insertBeanDB = new InsertBeanDB();
+    public List<MessageDO> insert() {
+        List<MessageDO> list = new ArrayList<>();
+        MessageDO insertBeanDB = new MessageDO();
         insertBeanDB.setChannel(CHANNEL);
         insertBeanDB.setMobile(mobile);
         insertBeanDB.setContent(this.toString());
+        insertBeanDB.setCreateDate(new Date());
         list.add(insertBeanDB);
         return list;
     }

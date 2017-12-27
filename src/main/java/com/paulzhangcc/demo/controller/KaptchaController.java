@@ -38,8 +38,6 @@ public class KaptchaController {
             String createText = defaultKaptcha.createText();
             logger.info("图形验证码:[{}]",createText);
             //TODO
-            //httpServletRequest.getSession().setAttribute("vrifyCode", createText);
-            //使用生产的验证码字符串返回一个BufferedImage对象并转为byte写入到byte数组中
             BufferedImage challenge = defaultKaptcha.createImage(createText);
             ImageIO.write(challenge, "jpg", jpegOutputStream);
         } catch (IllegalArgumentException e) {

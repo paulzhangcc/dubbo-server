@@ -55,7 +55,7 @@ public class RedisLock implements Lock {
                     //没有设置超时时间，直接退出等待
                     break;
                 }
-                Thread.sleep(sleep);
+                Thread.sleep(SLEEP);
             } while ((System.nanoTime() - nano) < unit.toNanos(timeout));
         } catch (Exception e) {
             logger.error("获取"+key+"锁异常！", e);
@@ -65,7 +65,7 @@ public class RedisLock implements Lock {
 
     @Override
     public boolean tryLock(List<String> keys) {
-        return tryLock(keys, 0l, null);
+        return tryLock(keys, 0L, null);
     }
 
     @Override
@@ -95,7 +95,7 @@ public class RedisLock implements Lock {
                 if (timeout <= 0) {
                     break;
                 }
-                Thread.sleep(sleep);
+                Thread.sleep(SLEEP);
             } while ((System.nanoTime() - nano) < unit.toNanos(timeout));
 
         }  catch (Exception e) {

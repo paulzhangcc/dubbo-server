@@ -1,4 +1,4 @@
-package com.paulzhangcc.demo.dao.mysql.DO;
+package com.paulzhangcc.demo.dao.mysql.model;
 
 import java.io.Serializable;
 

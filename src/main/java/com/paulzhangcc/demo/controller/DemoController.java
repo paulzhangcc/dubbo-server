@@ -1,7 +1,7 @@
 package com.paulzhangcc.demo.controller;
 
 
-import com.paulzhangcc.demo.dao.mysql.DO.DemoDO;
+import com.paulzhangcc.demo.dao.mysql.model.DemoDO;
 import com.paulzhangcc.demo.dao.mysql.mapper.DemoDAO;
 import com.paulzhangcc.demo.event.demo.DemoEvent;
 import com.paulzhangcc.demo.rpc.api.DemoFacadeService;

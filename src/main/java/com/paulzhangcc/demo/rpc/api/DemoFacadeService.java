@@ -9,5 +9,9 @@ import java.util.List;
  */
 public interface DemoFacadeService {
 
+    /**
+     *
+     * @return
+     */
     List<DemoDTO> top();
 }

@@ -17,7 +17,7 @@ public interface Lock {
     /**
      * 尝试间隔时间
      */
-    public static final int sleep = 100;
+    public static final int SLEEP = 100;
     /**
      * 如果锁空闲立即返回，否则阻塞等待
      * @param key

@@ -13,34 +13,36 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ExecutorsHelper {
     static class CustomThreadFactory implements ThreadFactory {
         private static Logger logger = LoggerFactory.getLogger(CustomThreadFactory.class);
-        private static final AtomicInteger poolNumber = new AtomicInteger(1);
+        private static final AtomicInteger POOL_NUMBER = new AtomicInteger(1);
         private final ThreadGroup group;
         private final AtomicInteger threadNumber = new AtomicInteger(1);
         private String namePrefix;
 
-        CustomThreadFactory(String namePrefix ) {
+        CustomThreadFactory(String namePrefix) {
             SecurityManager s = System.getSecurityManager();
             group = (s != null) ? s.getThreadGroup() :
                     Thread.currentThread().getThreadGroup();
-            this.namePrefix = namePrefix+"-pool-" +
-                    poolNumber.getAndIncrement() +
+            this.namePrefix = namePrefix + "-pool-" +
+                    POOL_NUMBER.getAndIncrement() +
                     "-thread-";
         }
-
+        @Override
         public Thread newThread(Runnable r) {
             Thread t = new Thread(group, r,
                     namePrefix + threadNumber.getAndIncrement(),
                     0);
-            if (t.isDaemon())
+            if (t.isDaemon()) {
                 t.setDaemon(false);
-            if (t.getPriority() != Thread.NORM_PRIORITY)
+            }
+            if (t.getPriority() != Thread.NORM_PRIORITY) {
                 t.setPriority(Thread.NORM_PRIORITY);
-            logger.info("系统创建线程成功,线程名称:{}",t.getName());
+            }
+            logger.info("系统创建线程成功,线程名称:{}", t.getName());
             return t;
         }
     }
 
-    public static ExecutorService generator(String prefix,int coreSize,int max){
+    public static ExecutorService generator(String prefix, int coreSize, int max) {
         return new ThreadPoolExecutor(coreSize, coreSize,
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<Runnable>(),

@@ -13,6 +13,6 @@
 	   	<typeHandler javaType="java.sql.Blob" handler="org.apache.ibatis.type.BlobTypeHandler"/>
 	</typeHandlers>
 	<plugins>
-		<plugin interceptor="com.paulzhangcc.sharing.mybatis.SQLDialectPlugin"></plugin>
+		<plugin interceptor="com.paulzhangcc.sharing.mybatis.SqlDialectPlugin"></plugin>
 	</plugins>
 </configuration>
