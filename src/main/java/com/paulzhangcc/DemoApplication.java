@@ -19,4 +19,14 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
+//	@Bean
+//	public TomcatEmbeddedServletContainerFactory tomcatFactory() {
+//		TomcatEmbeddedServletContainerFactory tomcatFactory = new TomcatEmbeddedServletContainerFactory();
+//		tomcatFactory.addContextCustomizers((context) -> {
+//			StandardRoot standardRoot = new StandardRoot(context);
+//			standardRoot.setCacheMaxSize(40 * 1024);
+//			standardRoot.setCachingAllowed(false);
+//		});
+//		return tomcatFactory;
+//	}
 }
