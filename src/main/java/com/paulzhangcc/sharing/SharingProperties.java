@@ -4,8 +4,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * @author paul
- * @date 2017/12/27
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 @ConfigurationProperties(prefix = "custom.sharing", ignoreUnknownFields = true)
 @Component

@@ -6,9 +6,9 @@ import com.baidu.unbiz.fluentvalidator.Result;
 import static com.baidu.unbiz.fluentvalidator.ResultCollectors.toSimple;
 
 /**
- * @author paul
- * @date 2017/12/27
- * @Description:    java类作用描述
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public class NullValidator {
     public static void main(String[] args) {

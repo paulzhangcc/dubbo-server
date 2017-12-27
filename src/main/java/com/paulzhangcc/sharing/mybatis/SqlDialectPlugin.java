@@ -13,7 +13,11 @@ import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.util.Properties;
-
+/**
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
+ */
 @Component
 @Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class,Integer.class }) })
 public class SqlDialectPlugin implements Interceptor {

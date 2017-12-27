@@ -12,7 +12,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
+ */
 @Component
 public class RedisLock implements Lock {
     private final static Logger logger = LoggerFactory.getLogger(RedisLock.class);

@@ -5,8 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author paul
- * @date 2017/12/26
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 @NotThreadSafe
 public abstract class AbstractSmsSendHanlder implements Runnable {

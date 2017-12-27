@@ -17,6 +17,11 @@ import java.util.Properties;
 
 import static org.mybatis.generator.internal.util.StringUtility.isTrue;
 
+/**
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
+ */
 public class CommentGeneratorHelper implements CommentGenerator {
     private Properties properties;
     private Properties systemPro;

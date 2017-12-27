@@ -7,8 +7,9 @@ import com.paulzhangcc.sharing.message.queue.TaskQueue;
 import static com.paulzhangcc.sharing.message.queue.QueueEnum.SMS_SINGLE;
 
 /**
- * @author paul
- * @date 2017/12/26
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public class AliMessageStrategy implements MessageStrategy {
 

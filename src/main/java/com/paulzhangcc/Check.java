@@ -9,7 +9,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by paul on 2017/11/24.
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public class Check {
     private static final Logger logger = LoggerFactory.getLogger(Check.class);

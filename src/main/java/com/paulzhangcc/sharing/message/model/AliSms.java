@@ -1,7 +1,11 @@
 package com.paulzhangcc.sharing.message.model;
 
 import java.util.*;
-
+/**
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
+ */
 public class AliSms implements MessageInsertDatabase {
     public static  final String CHANNEL = "ALIYUN";
     /**

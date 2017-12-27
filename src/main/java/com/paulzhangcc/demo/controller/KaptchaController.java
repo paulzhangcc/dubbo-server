@@ -16,8 +16,9 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 
 /**
- * @author paul
- * @date 2017/12/25
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 @Controller
 public class KaptchaController {

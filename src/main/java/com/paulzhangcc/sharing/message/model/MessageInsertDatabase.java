@@ -3,8 +3,9 @@ package com.paulzhangcc.sharing.message.model;
 import java.util.List;
 
 /**
- * @author paul
- * @date 2017/12/26
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public interface MessageInsertDatabase {
     List<MessageDO> insert();

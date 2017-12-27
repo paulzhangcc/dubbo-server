@@ -6,6 +6,11 @@ import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
+/**
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
+ */
 public class TaskQueue {
 
 	private static Map<QueueEnum, LinkedBlockingQueue<Runnable>> queueMap = new HashMap<QueueEnum, LinkedBlockingQueue<Runnable>>();

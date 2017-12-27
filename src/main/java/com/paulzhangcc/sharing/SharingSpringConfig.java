@@ -7,8 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Properties;
 
 /**
- * @author paul
- * @date 2017/12/27
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 @Configuration
 public class SharingSpringConfig {
@@ -50,10 +51,10 @@ public class SharingSpringConfig {
         properties.setProperty("kaptcha.textproducer.char.space", "5");
 
         //properties.setProperty("kaptcha.session.key", "code");
-//        图片样式：
-//        水纹com.google.code.kaptcha.impl.WaterRipple
-//        鱼眼com.google.code.kaptcha.impl.FishEyeGimpy
-//        阴影com.google.code.kaptcha.impl.ShadowGimpy
+        //        图片样式：
+        //        水纹com.google.code.kaptcha.impl.WaterRipple
+        //        鱼眼com.google.code.kaptcha.impl.FishEyeGimpy
+        //        阴影com.google.code.kaptcha.impl.ShadowGimpy
         properties.setProperty("kaptcha.obscurificator.impl", "com.google.code.kaptcha.impl.WaterRipple");
         //干扰 颜色，合法值： r,g,b 或者 white,black,blue.
         properties.setProperty("kaptcha.noise.color", "black");

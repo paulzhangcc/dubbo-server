@@ -5,7 +5,9 @@ import com.paulzhangcc.demo.rpc.dto.DemoDTO;
 import java.util.List;
 
 /**
- * Created by paul on 2017/11/16.
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public interface DemoFacadeService {
 

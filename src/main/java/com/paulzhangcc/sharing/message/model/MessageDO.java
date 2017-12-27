@@ -3,8 +3,9 @@ package com.paulzhangcc.sharing.message.model;
 import java.util.Date;
 
 /**
- * @author paul
- * @date 2017/12/27
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public class MessageDO {
     private String mobile;

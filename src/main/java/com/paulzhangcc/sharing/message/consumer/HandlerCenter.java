@@ -14,8 +14,9 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * @author paul
- * @date 2017/12/26
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 @Component
 public class HandlerCenter implements InitializingBean {

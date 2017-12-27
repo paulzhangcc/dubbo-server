@@ -10,7 +10,9 @@ import org.slf4j.LoggerFactory;
 import static com.paulzhangcc.sharing.message.queue.QueueEnum.SMS_INSERTDB;
 
 /**
- * 阿里云短信发送处理类
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 @NotThreadSafe
 public class AliSmsSendHanlder extends AbstractSmsSendHanlder {

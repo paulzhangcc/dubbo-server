@@ -1,7 +1,9 @@
 package com.paulzhangcc.sharing.lock;
 
 /**
- * Created by paul on 2017/11/27.
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public class LockPrefixConsts {
 }

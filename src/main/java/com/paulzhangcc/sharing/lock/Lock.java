@@ -3,7 +3,11 @@ package com.paulzhangcc.sharing.lock;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
+ */
 public interface Lock {
     /**
      * 单个锁有效期(如何设置:通过数据库事物提交的时间作为参考值)

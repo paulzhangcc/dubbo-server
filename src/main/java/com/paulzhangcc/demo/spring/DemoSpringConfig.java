@@ -5,7 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.config.TaskExecutorFactoryBean;
 
 /**
- * Created by paul on 2017/11/17.
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 @Configuration
 public class DemoSpringConfig {

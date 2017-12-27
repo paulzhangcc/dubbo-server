@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by paul on 2017/11/16.
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public class ZookeeperLock implements Lock {
     @Override

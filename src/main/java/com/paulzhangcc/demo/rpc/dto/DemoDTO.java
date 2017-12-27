@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * Created by paul on 2017/11/17.
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public class DemoDTO implements Serializable{
 

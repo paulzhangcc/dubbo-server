@@ -4,8 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author paul
- * @date 2017/12/26
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
  */
 public class NoMessageStrategy implements MessageStrategy {
     private static Logger logger = LoggerFactory.getLogger(NoMessageStrategy.class);

@@ -8,6 +8,11 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ *
+ * @author: Paul Zhang
+ * @date: 16:21 2017/12/27
+ */
 @SpringBootApplication
 @MapperScan("com.paulzhangcc.demo.dao.mysql.mapper") //注入mybatis配置文件
 @ImportResource(locations={"classpath:spring/application*.xml"}) //映入spring配置
