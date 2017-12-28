@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
+ * 根据excel模板，将查询数据写入excel导出
  * @author: Paul Zhang
  * @date: 18:28 2017/12/27
  */
@@ -73,7 +74,13 @@ public class ExcelExportUtils {
         }
 
         try {
-            Workbook workbook = new HSSFWorkbook(is);
+            Workbook workbook = null;
+            if (name.endsWith(".xls")){
+                workbook = new HSSFWorkbook(is);
+            }else {
+                throw new IllegalArgumentException("只支持excel格式:.xls");
+            }
+
             if (workbook.getSheetAt(0).getPhysicalNumberOfRows() != 2) {
                 throw new IllegalArgumentException("模版格式错误, 至少有两行数据");
             }
@@ -107,7 +114,14 @@ public class ExcelExportUtils {
             suffix = template.substring(dotLastIndex);
         }
 
-        File dir = new File(sharingProperties.getFileSystemRoot() + "/export/excel/"
+        String fileSystemRoot = sharingProperties.getFileSystemRoot();
+        String prefix = null;
+        if (fileSystemRoot.endsWith("/")){
+            prefix = fileSystemRoot+"export/excel/";
+        }else {
+            prefix = fileSystemRoot+"/export/excel/";
+        }
+        File dir = new File( prefix
                 + new SimpleDateFormat("yyyyMMdd").format(new Date()));
         try {
             FileUtils.forceMkdir(dir);

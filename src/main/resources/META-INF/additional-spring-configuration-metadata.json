@@ -3,16 +3,16 @@
     {
       "name": "custom.sharing.open-sms",
       "type": "java.lang.Boolean",
-      "description": "control real sms send",
+      "description": "Whether to open the actual text message channel",
       "sourceType": "com.paulzhangcc.sharing.SharingProperties",
       "defaultValue": "true"
     },
     {
       "name": "custom.sharing.file-system-root",
       "type": "java.lang.String",
-      "description": "filesystem  root",
+      "description": "Shared file system directory,Please configure the system to allow programs to access the directory",
       "sourceType": "com.paulzhangcc.sharing.SharingProperties",
-      "defaultValue": "/"
+      "defaultValue": "/nfs"
     }
   ]
 }

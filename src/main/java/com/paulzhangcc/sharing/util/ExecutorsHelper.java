@@ -7,6 +7,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * 自定义生成ExecutorService
  * @author paul
  * @date 2017/12/26
  */

@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- *
+ * 通过redis实现锁
  * @author: Paul Zhang
  * @date: 16:21 2017/12/27
  */
